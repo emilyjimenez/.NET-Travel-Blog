@@ -1,13 +1,13 @@
 ﻿@model TravelBlog.Models.Location
 
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Travel Blog - Location Details";
     Layout = "_Layout";
 }
 
-<h1>@Html.DisplayFor(model => model.Name)</h1>
+<h1>✈️ ️@Html.DisplayFor(model => model.Name)</h1>
 
-<h2>People</h2>
+<h2>👫 People</h2>
 
 @foreach(var person in Model.People)
 {
@@ -20,7 +20,7 @@
 
 @Html.ActionLink("Add a person", "AddToLocation", "People", new {locationId = Model.LocationId})
 
-<h2>Experiences</h2>
+<h2>👾 Experiences</h2>
 
 @foreach(var experience in Model.Experiences)
 {

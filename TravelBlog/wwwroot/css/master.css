@@ -1,3 +1,35 @@
-﻿body {
-    background-color: peachpuff;
+﻿@font-face {
+    font-family: 'My Underwood';
+    src: url("../fonts/MyUnderwood.ttf") format("truetype");
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'My Underwood';
+}
+
+body {
+    font-family: Courier New, Courier, monospace;
+    background-color: antiquewhite;
+    background-image: url('../img/mapbg.jpeg'), url('../img/planebg.jpeg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .5);
+    width: 90%;
+    margin: auto;
+    padding-bottom: 150px;
+}
+
+.page-header {
+    
+}
+
+.page-body {
+    
 }

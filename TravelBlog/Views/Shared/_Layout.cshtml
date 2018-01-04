@@ -6,6 +6,13 @@
         <link rel="stylesheet" href="/css/master.css">
     </head>
     <body>
-        @RenderBody()
+		<div class="page-container">
+	        <div class="page-header">
+	            @Html.Partial("Header")
+	        </div>
+	        <div class="page-body">
+	            @RenderBody()
+	        </div>
+        </div>
     </body>
 </html>
