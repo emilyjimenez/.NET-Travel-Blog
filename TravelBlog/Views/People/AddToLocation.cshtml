@@ -11,7 +11,7 @@
 {
     @Html.HiddenFor(model => model.Location.LocationId)
 
-    @Html.LabelFor(model => model.PersonName)
+    @Html.LabelFor(model => model.PersonName, "Person Name")
     @Html.TextBoxFor(model => model.PersonName)
     <input type="submit" value="Add Person">
 }

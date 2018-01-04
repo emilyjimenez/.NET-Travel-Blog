@@ -1,0 +1,23 @@
+﻿@model TravelBlog.ViewModels.ExperienceAtLocation
+@{
+    ViewData["Title"] = "Home";
+    Layout = "_Layout";
+}
+
+<h1>Edit experience</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Location.LocationId)
+    @Html.HiddenFor(model => model.ExperienceId)
+
+    @Html.LabelFor(model => model.ExperienceName, "Experience Name")
+    @Html.TextBoxFor(model => model.ExperienceName)
+
+    @Html.LabelFor(model => model.ExperienceDescription, "Experience Description")
+    @Html.TextAreaFor(model => model.ExperienceDescription)
+
+    <input type="submit" value="Edit Experience">
+}
+
+<p>@Html.ActionLink("Go Back", "Details", "Home", new { id = @Model.Location.LocationId })</p>

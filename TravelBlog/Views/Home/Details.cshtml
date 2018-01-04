@@ -9,9 +9,31 @@
 
 <h2>People</h2>
 
-@Html.ActionLink("Add a person", "Add", "People", new {locationId = Model.LocationId})
+@foreach(var person in Model.People)
+{
+    <li>
+        @Html.DisplayFor(item => person.Name) | 
+        @Html.ActionLink("delete person", "DeletePerson", "People", new {personId = person.PersonId}) | 
+        @Html.ActionLink("edit person", "EditPerson", "People", new {locationId = Model.LocationId, personId = person.PersonId})
+    </li>
+}
+
+@Html.ActionLink("Add a person", "AddToLocation", "People", new {locationId = Model.LocationId})
 
 <h2>Experiences</h2>
+
+@foreach(var experience in Model.Experiences)
+{
+    <li>
+        @Html.DisplayFor(item => experience.Name) - @Html.DisplayFor(item => experience.Description)
+	    <p>
+	        @Html.ActionLink("delete experience", "DeleteExperience", "Experiences", new {experienceId = experience.ExperienceId}) | 
+	        @Html.ActionLink("edit experience", "EditExperience", "Experiences", new {locationId = Model.LocationId, experienceId = experience.ExperienceId})
+	    </p>
+    </li>
+}
+
+@Html.ActionLink("Add an experience", "AddToLocation", "Experiences", new {locationId = Model.LocationId})
 
 
 <p>@Html.ActionLink("Go Back", "Index")</p>
