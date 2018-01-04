@@ -1,0 +1,17 @@
+﻿@model TravelBlog.Models.Location
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "_Layout";
+}
+
+<h1>@Html.DisplayFor(model => model.Name)</h1>
+
+<h2>People</h2>
+
+@Html.ActionLink("Add a person", "Add", "People", new {locationId = Model.LocationId})
+
+<h2>Experiences</h2>
+
+
+<p>@Html.ActionLink("Go Back", "Index")</p>

@@ -1,0 +1,19 @@
+﻿@model TravelBlog.ViewModels.PersonAtLocation
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "_Layout";
+}
+
+<h1>Add a person to @Model.Location.Name</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Location.LocationId)
+
+    @Html.LabelFor(model => model.PersonName)
+    @Html.TextBoxFor(model => model.PersonName)
+    <input type="submit" value="Add Person">
+}
+
+<p>@Html.ActionLink("Go Back", "Details", "Home", new { id = @Model.Location.LocationId })</p>
